@@ -1,4 +1,4 @@
-service: my-first-rs-app-store
+service: my-aws-rs-app-store
 
 frameworkVersion: '2'
 
@@ -17,7 +17,7 @@ plugins:
 
 custom:
   client:
-    bucketName: my-second-rs-app-store
+    bucketName: my-aws-rs-app-store
     distributionFolder: build
   s3BucketName: ${self:custom.client.bucketName}
 
