@@ -13,8 +13,8 @@ axios.interceptors.response.use(
     return response;
   },
   function(error) {
-    if (error?.response?.status === 400) {
-      alert(error.response.data?.data);
+    if (error?.response?.status === 400 || error?.response?.status === 401 || error?.response?.status === 403) {
+      alert(`http status ${error?.response?.status} (${error?.response.data?.message}): ${error.response.data?.data || '<empty response payload>'}`);
     }
 
     return Promise.reject(error?.response ?? error);
